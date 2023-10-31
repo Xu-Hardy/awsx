@@ -1,0 +1,36 @@
+[project]
+name = "awsx"
+
+version = "2.1.0"
+
+authors = [
+  { name="Xu", email="deep.work.max@gmail.com" },
+]
+
+description = "awsx"
+
+readme = "README.md"
+
+requires-python = ">=3.7"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+        'Click',
+        'boto3',
+        'configparser',
+        'pyperclip',
+        'psutil'
+    ]
+
+
+[project.scripts]
+awsx="main:role_token"
+
+[project.urls]
+"Homepage" = "https://github.com/pypa/sampleproject"
+"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"

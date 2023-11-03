@@ -97,8 +97,13 @@ def role_token(profile, region, profilename):
         print(f"Switched to: {identity['Arn']}")
         print("The following command has been copied to the clipboard, please paste it to set environment variables")
         cmd = copy_env_command_to_clipboard(chosen_profile)
-        print(cmd)
-        pyperclip.copy(cmd)
+        
+        try:
+            pyperclip.copy(cmd)
+        except:
+            print("If you're a Linux user, you lack dependencies on the clipboard or graphics. Please copy and paste the following command manually:")
+        finally:
+            print(cmd)
 
     else:
 

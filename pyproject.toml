@@ -1,7 +1,7 @@
 [project]
 name = "awsx"
 
-version = "2.1.1"
+version = "2.0.0"
 
 authors = [
   { name="Xu", email="deep.work.max@gmail.com" },

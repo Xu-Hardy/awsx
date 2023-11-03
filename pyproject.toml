@@ -29,7 +29,7 @@ dependencies = [
 
 
 [project.scripts]
-awsx="src/main:role_token"
+awsx="src/awsx/main:role_token"
 
 [project.urls]
 "Homepage" = "https://github.com/Xu-Hardy/awsx"

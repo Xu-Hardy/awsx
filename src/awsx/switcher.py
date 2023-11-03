@@ -18,7 +18,7 @@ def get_identity(region, profile=None):
 
 def get_parent_process_name():
     current_process = psutil.Process()
-    parent_process = current_process.parent()
+    parent_process = current_process.parent().parent()
     return parent_process.name()
 
 
@@ -29,8 +29,9 @@ def copy_env_command_to_clipboard(profile):
         if process_name == "cmd.exe":
             cmd = f"set AWS_PROFILE={profile}"
         elif process_name == "powershell.exe":
-            cmd = f"$Env:AWS_PROFILE={profile}"
-        print("not powershell or cmd")
+            cmd = f"$Env:AWS_PROFILE='{profile}'"
+        else:
+            cmd = "not powershell or cmd, pls check your platform and process"
     elif system in ["Linux", "Darwin"]:  # Darwin是MacOS的系统名称
         cmd = f"export AWS_PROFILE={profile}"
     else:
@@ -109,5 +110,5 @@ def role_token(profile, region, profilename):
         print(f"Secret Key: {credentials.secret_key}")
 
 
-if __name__ == "__main__":
-    role_token()
+# if __name__ == "__main__":
+#     role_token()

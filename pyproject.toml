@@ -29,7 +29,7 @@ dependencies = [
 
 
 [project.scripts]
-awsx="main"
+awsx="main:aws_cli"
 
 [project.urls]
 "Homepage" = "https://github.com/Xu-Hardy/awsx"
